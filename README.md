@@ -1,44 +1,75 @@
-# Comandos-Docker
 
-Comando para fazer o bulid do docker. 
+# 🐳 Comandos Docker
+
+Guia rápido de comandos Docker úteis para desenvolvimento.
+
+---
+
+## 🚀 Build do Docker
+
+Criar a imagem do Docker sem usar cache:
 
 ```bash
 docker compose build --no-cache
 ```
 
-Rodar Docker sem travar Terminal 
+---
+
+## ⚡ Rodar Docker em background
+
+Executa o Docker sem travar o terminal:
 
 ```bash
-docker compose up -d 
+docker compose up -d
 ```
 
-Acessar terminal de dentro do Docker com apache. 
+---
 
+## 🖥️ Acessar terminal do container
+
+### Apache
 ```bash
 docker exec -it nome-do-container-front bash
 ```
-Acessar terminal de dentroo do Docker com Alpine.
 
+### Alpine
 ```bash
 docker exec -it nome-do-container-front sh
 ```
-Após acessar rodar comando instalação de dependencias. 
+
+---
+
+## 📦 Instalar dependências
+
+Após acessar o terminal do container, instalar dependências do projeto:
+
 ```bash
 composer install
 ```
-Stop nos docker. 
+
+---
+
+## 🛑 Parar containers
+
 ```bash
 docker compose down
 ```
-Remover img do Docker.
+
+---
+
+## 🗑️ Remover imagens Docker
+
+### Remover uma imagem específica
 ```bash
 docker rmi <nome-ou-id-da-imagem>
 ```
-Remover todas as imagens, usar com moderação. 
+
+### Remover todas as imagens (use com cuidado!)
 ```bash
 docker rmi $(docker images -a -q)
 ```
-Remover todas as imagens não usadas. 
+
+### Remover todas as imagens não usadas
 ```bash
 docker image prune --all
 ```
